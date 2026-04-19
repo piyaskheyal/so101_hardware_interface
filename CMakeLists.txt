@@ -7,6 +7,17 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
+
+ament_python_install_package(${PROJECT_NAME})
+
+install(PROGRAMS
+  scripts/calibrate.py
+  scripts/hardware_interface.py
+  scripts/joint_pos_control.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
