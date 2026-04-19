@@ -27,7 +27,7 @@ class HardwareInterface(Node):
 
         import json
         import os
-        json_path = os.path.join(os.getcwd(), "src", "arm_hardware_interface", "resource", "so101_calibration.json")
+        json_path = os.path.join(os.getcwd(), "src", "so101_hardware_interface", "resource", "so101_calibration.json")
         try:
             with open(json_path, 'r') as f:
                 self.calibration = json.load(f)
