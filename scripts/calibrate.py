@@ -8,7 +8,7 @@ try:
     from so101_hardware_interface.motors.feetech import FeetechMotorsBus
 except ImportError:
     print("Ensure you have sourced your ROS 2 workspace (e.g. source install/setup.bash)")
-    print("and run this script using: python3 src/arm_hardware_interface/arm_hardware_interface/calibrate.py")
+    print("and run this script using: python3 src/so101_hardware_interface/scripts/calibrate.py")
     sys.exit(1)
 
 def main():
@@ -113,7 +113,7 @@ def main():
     bus.disconnect()
 
     # Determine file path
-    package_src_dir = os.path.join(os.getcwd(), "src", "arm_hardware_interface")
+    package_src_dir = os.path.join(os.getcwd(), "src", "so101_hardware_interface")
     if not os.path.exists(package_src_dir):
         # Fallback if run from the package dir itself
         package_src_dir = os.getcwd()
