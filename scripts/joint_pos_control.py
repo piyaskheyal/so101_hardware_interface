@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from so101_hardware_interface.motors.feetech import FeetechMotorsBus
 import tkinter as tk
 from tkinter import ttk
