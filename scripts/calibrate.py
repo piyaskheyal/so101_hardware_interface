@@ -5,9 +5,15 @@ import json
 import time
 import threading
 
+# Add the package root to sys.path so we can import so101_hardware_interface
+script_dir = os.path.dirname(os.path.realpath(__file__))
+package_dir = os.path.dirname(script_dir)
+sys.path.insert(0, package_dir)
+
 try:
     from so101_hardware_interface.motors.feetech import FeetechMotorsBus
-except ImportError:
+except ImportError as e:
+    print(f"ImportError: {e}")
     print("Ensure you have sourced your ROS 2 workspace (e.g. source install/setup.bash)")
     print("and run this script using: python3 src/so101_hardware_interface/scripts/calibrate.py")
     sys.exit(1)
